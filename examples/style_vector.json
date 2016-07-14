@@ -1,0 +1,62 @@
+{
+  "version": 8,
+  "center": [
+    13.320273556711044,
+    52.4976497577654
+  ],
+  "metadata": {
+    "mapbox:autocomposite": true
+  },
+  "zoom": 10,
+  "bearing": 0,
+  "pitch": 0,
+  "sprite": "mapbox://sprites/mapbox/satellite-hybrid-v8",
+  "glyphs": "mapbox://fonts/mapbox/{fontstack}/{range}.pbf",
+  "sources": {
+    "water": {
+      "type": "vector",
+      "tiles": [
+        "http://localhost:10060/v2/tiles/vector_example/{z}/{x}/{y}.pbf"
+      ]
+    }
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "background",
+      "paint": {
+        "background-color": "rgba(255,255,255,1)"
+      },
+      "interactive": true
+    },
+    {
+      "type": "line",
+      "id": "water_line",
+      "source": "water",
+      "source-layer": "water",
+      "interactive": true,
+      "paint": {
+        "line-width": 2,
+        "line-color": "rgba(136,170,238,0.5)"
+      }
+    },
+    {
+      "type": "fill",
+      "id": "water_polygon",
+      "source": "water",
+      "source-layer": "water",
+      "interactive": true,
+      "paint": {
+        "fill-color": "rgba(136,170,238,0.5)"
+      },
+      "filter": [
+        "all",
+        [
+          "==",
+          "$type",
+          "Polygon"
+        ]
+      ]
+    }
+  ]
+}

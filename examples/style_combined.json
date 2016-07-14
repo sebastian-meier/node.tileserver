@@ -1,0 +1,57 @@
+{
+  "version": 8,
+  "center": [
+    13.320273556711044,
+    52.4976497577654
+  ],
+  "metadata": {
+    "mapbox:autocomposite": true
+  },
+  "zoom": 10,
+  "bearing": 0,
+  "pitch": 0,
+  "sprite": "mapbox://sprites/mapbox/satellite-hybrid-v8",
+  "glyphs": "mapbox://fonts/mapbox/{fontstack}/{range}.pbf",
+  "sources": {
+    "water": {
+      "type": "vector",
+      "tiles": [
+        "http://localhost:10060/v2/tiles/vector_example/{z}/{x}/{y}.pbf"
+      ]
+    },
+    "raster": {
+      "type": "raster",
+      "tileSize": 256,
+      "tiles": [
+        "http://localhost:10060/v2/tiles/raster_example/{z}/{x}/{y}.png"
+      ]
+    }
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "background",
+      "paint": {
+        "background-color": "rgba(255,255,255,1)"
+      },
+      "interactive": true
+    },
+    {
+      "id": "image",
+      "type": "raster",
+      "source": "raster",
+      "source-layer": "water"
+    },
+    {
+      "type": "line",
+      "id": "water_line",
+      "source": "water",
+      "source-layer": "water",
+      "interactive": true,
+      "paint": {
+        "line-width": 2,
+        "line-color": "rgba(0,255,255,0.3)"
+      }
+    }
+  ]
+}

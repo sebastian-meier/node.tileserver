@@ -1,0 +1,20 @@
+{
+  "name": "tileserver",
+  "version": "1.0.0",
+  "license": "GPL-3.0",
+  "description": "Hosting raster and vector tiles in .mbtiles format",
+  "engines": {
+    "node": ">=4.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sebastian-meier/node.tileserver"
+  },
+  "dependencies": {
+    "express": "^4.14.0",
+    "http": "0.0.0",
+    "mbtiles": "^0.9.0",
+    "sqlite3": "^3.1.4",
+    "tilelive": "^5.12.2"
+  }
+}
